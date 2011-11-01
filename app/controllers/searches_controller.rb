@@ -14,11 +14,7 @@ class SearchesController < ApplicationController
   # GET /searches/1.json
   def show
     @search = Search.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @search }
-    end
+    @recipes = @search.get_recipes
   end
 
   # GET /searches/new
