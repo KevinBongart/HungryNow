@@ -1,0 +1,53 @@
+<%= form_for(@recipe) do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :source_name %><br />
+    <%= f.text_field :source_name %>
+  </div>
+  <div class="field">
+    <%= f.label :thumb %><br />
+    <%= f.text_field :thumb %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :source_url %><br />
+    <%= f.text_field :source_url %>
+  </div>
+  <div class="field">
+    <%= f.label :pf_url %><br />
+    <%= f.text_field :pf_url %>
+  </div>
+  <div class="field">
+    <%= f.label :published %><br />
+    <%= f.datetime_select :published %>
+  </div>
+  <div class="field">
+    <%= f.label :source_img %><br />
+    <%= f.text_field :source_img %>
+  </div>
+  <div class="field">
+    <%= f.label :shortcode %><br />
+    <%= f.text_field :shortcode %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

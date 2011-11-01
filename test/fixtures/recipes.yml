@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rating: 1.5
+  source_name: MyString
+  thumb: MyString
+  title: MyString
+  source_url: MyString
+  pf_url: MyString
+  published: 2011-10-31 22:54:33
+  source_img: MyString
+  shortcode: MyString
+
+two:
+  rating: 1.5
+  source_name: MyString
+  thumb: MyString
+  title: MyString
+  source_url: MyString
+  pf_url: MyString
+  published: 2011-10-31 22:54:33
+  source_img: MyString
+  shortcode: MyString

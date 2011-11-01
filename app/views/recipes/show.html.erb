@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rating:</b>
+  <%= @recipe.rating %>
+</p>
+
+<p>
+  <b>Source name:</b>
+  <%= @recipe.source_name %>
+</p>
+
+<p>
+  <b>Thumb:</b>
+  <%= @recipe.thumb %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @recipe.title %>
+</p>
+
+<p>
+  <b>Source url:</b>
+  <%= @recipe.source_url %>
+</p>
+
+<p>
+  <b>Pf url:</b>
+  <%= @recipe.pf_url %>
+</p>
+
+<p>
+  <b>Published:</b>
+  <%= @recipe.published %>
+</p>
+
+<p>
+  <b>Source img:</b>
+  <%= @recipe.source_img %>
+</p>
+
+<p>
+  <b>Shortcode:</b>
+  <%= @recipe.shortcode %>
+</p>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
