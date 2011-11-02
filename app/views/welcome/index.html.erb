@@ -1,9 +1,20 @@
-<%= form_for(@search) do |f| %>
-  <div class="field">
-    <%= f.label :text %><br />
-    <%= f.text_field :text %>
+<div class="container">
+
+  <div class="hero-unit">
+    <h1>What do you want to eat?</h1>
+
+    <p>
+      <%= form_for(@search) do |f| %>
+        <div class="clearfix">
+          <div class="input">
+            <%= f.text_field :text, :class => "xlarge", :placeholder => @value %>
+          </div>        
+        </div>
+        <div class="actions">
+          <%= f.submit "I'm hungry", :class => "btn primary large" %>
+        </div>
+      <% end %>
+      
+    </p>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

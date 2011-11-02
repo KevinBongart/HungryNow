@@ -8,7 +8,20 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <%= link_to "HungryNow", root_path, :class => "brand" %>
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><%=  %></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <%= yield %>
 
 </body>
 </html>
