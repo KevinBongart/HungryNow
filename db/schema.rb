@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111101034306) do
+ActiveRecord::Schema.define(:version => 20111101235931) do
 
   create_table "recipes", :force => true do |t|
     t.float    "rating"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20111101034306) do
     t.datetime "published"
     t.string   "source_img"
     t.string   "shortcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipes_searches", :id => false, :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "search_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

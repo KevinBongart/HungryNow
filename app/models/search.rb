@@ -1,12 +1,14 @@
 class Search < ActiveRecord::Base
+  has_and_belongs_to_many :recipes, :uniq => true
+
+  after_create :get_recipes
+
   PUNCHFORK_API_KEY = '57639c7dabdfe69'
 
   def get_recipes
-    p "(((((API CALLS)))))"
     params = { :key => PUNCHFORK_API_KEY, :q => self.text, :count => 50 }
-    p params
     response = Nestful.get 'http://api.punchfork.com/recipes', :format => :json, :params => params
-    p response
+
     recipes = []
     response['recipes'].each do |recipe|
       r = Recipe.find_by_shortcode recipe['shortcode']
@@ -25,9 +27,7 @@ class Search < ActiveRecord::Base
         )
       end
 
-      recipes << r
+      self.recipes << r
     end
-
-    recipes
   end
 end

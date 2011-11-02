@@ -14,7 +14,7 @@ class SearchesController < ApplicationController
   # GET /searches/1.json
   def show
     @search = Search.find(params[:id])
-    @recipes = @search.get_recipes
+    @recipes = @search.recipes
   end
 
   # GET /searches/new
@@ -36,7 +36,9 @@ class SearchesController < ApplicationController
   # POST /searches
   # POST /searches.json
   def create
-    @search = Search.new(params[:search])
+    @search = Search.find_by_text(params[:text])
+
+    @search = Search.new(params[:search]) unless @search
 
     respond_to do |format|
       if @search.save
