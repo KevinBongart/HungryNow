@@ -36,7 +36,14 @@ class SearchesController < ApplicationController
   # POST /searches
   # POST /searches.json
   def create
-    @search = Search.find_by_text(params[:text])
+    text = params[:search][:text]
+    text = text.downcase
+    text = text.split(/\W|and/)
+    text = text.delete_if {|s| s.blank?}
+    text = text.join('-')
+    params[:search][:text] = text
+
+    @search = Search.find_by_text(params[:search][:text])
 
     @search = Search.new(params[:search]) unless @search
 
