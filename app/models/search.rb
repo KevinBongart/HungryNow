@@ -12,7 +12,7 @@ class Search < ActiveRecord::Base
     recipes = []
     response['recipes'].each do |recipe|
       r = Recipe.find_by_shortcode recipe['shortcode']
-      
+
       unless r
         r = Recipe.create(
           :rating => recipe['rating'],
@@ -29,5 +29,9 @@ class Search < ActiveRecord::Base
 
       self.recipes << r
     end
+  end
+
+  def to_title
+    self.text.split('-').to_sentence
   end
 end
